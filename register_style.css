@@ -1,0 +1,24 @@
+body
+{
+	background-image: url("images/reg_bg.jpg");
+	background-size: contain;
+	color: #ebdef0;
+	font-family: "Comic Sans", "Comic Sans MS", cursive;
+}
+
+input[type=text], input[type=email], input[type=password]{
+  background-color: black;
+  color: #ebdef0;
+  border: none;
+  border-bottom: 1px solid #ebdef0;
+
+}
+
+input[type=submit]{
+	background-color: #6c3483;
+	height: 30px;
+	width:200px;
+	color: #ebdef0;
+	border: none;
+	font-family: "Comic Sans", "Comic Sans MS", cursive;
+}
