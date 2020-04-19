@@ -1,24 +1,70 @@
 body
 {
-	background-image: url("images/reg_bg.jpg");
+	background-color:#071e3d;
 	background-size: contain;
-	color: #ebdef0;
-	font-family: "Comic Sans", "Comic Sans MS", cursive;
+	color: rgba(255,255,255,150);
+	font-family: Trattatello, fantasy;
+	font-size:200%;
+	line-height: 80%
 }
 
-input[type=text], input[type=email], input[type=password]{
-  background-color: black;
-  color: #ebdef0;
-  border: none;
-  border-bottom: 1px solid #ebdef0;
+.form_bg{	
+	width:35%;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px groove #21e6c1;
+	border-radius: 7px;
+}
 
+form{
+	padding-left: 5%;
+}
+
+label{
+	/*font-size: 200%;*/
+}
+
+h2{
+	text-align: center;
+	/*font-size: 300%;*/
+} 
+
+input[type=text], input[type=email], input[type=password]{
+  width:90%;
+  background-color: rgba(0,0,0,0);
+  color: rgba(255,255,255,150);
+  border: none;
+  border-bottom: 1px solid #278ea5;
+  font-family: Trattatello, fantasy;
+  font-size: 80%;
 }
 
 input[type=submit]{
-	background-color: #6c3483;
-	height: 30px;
-	width:200px;
-	color: #ebdef0;
-	border: none;
-	font-family: "Comic Sans", "Comic Sans MS", cursive;
+	background-color: rgba(33, 230, 193, 150);
+	height: 10%;
+	width:40%;
+	margin-left: 25%;
+	color: rgba(255,255,255,150);
+	text-align: center;
+	border: 2px groove #21e6c1;
+	border-radius: 7px;
+	font-family: Trattatello, fantasy;	
+	font-size: 100%;
+	font-weight: bold;
 }
+
+.error{
+	color: #278ea5;
+	font-size: 80%;		
+}
+
+.end{
+	text-align: center;
+	font-size: 80%; 
+}
+
+.end a{
+	color:#278ea5;
+}
+

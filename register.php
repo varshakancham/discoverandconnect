@@ -104,6 +104,8 @@ if(empty($error_array)) {
 	<link rel="stylesheet" href="register_style.css">
 </head>
 <body>
+<div class="form_bg">
+<br><h2>Registration</h2><br>
 <form action="register.php" method="post">
 	<label for="reg_fname">First name</label><br>
     <input type="text" id="reg_fname" name="reg_fname" value="<?php 
@@ -111,10 +113,11 @@ if(empty($error_array)) {
     {
     	echo $_SESSION['reg_fname'];
     }
-    ?>" required><br><br>
+    ?>" required><br>
+    <div class="error">
     <?php 
     if(in_array("First name should be 1 to 25 characters long",$error_array)){echo "First name should be 1 to 25 characters long<br>";}
-    ?>
+    ?></div><br>
 
     <label for="reg_lname">Last name</label><br>
     <input type="text" id="reg_lname" name="reg_lname"
@@ -123,10 +126,11 @@ if(empty($error_array)) {
     {
     	echo $_SESSION['reg_lname'];
     }
-    ?>" ><br><br>
+    ?>" required><br>
+    <div class="error">
     <?php 
-    if(in_array("Last name should be 1 to 25 characters long",$error_array)){echo "Last name should be 1 to 25 characters long<br>";}
-    ?>
+    if(in_array("Last name should be 1 to 25 characters long",$error_array)){echo "Last name should be 1 to 25 characters long  <br>";}
+    ?></div><br>
 
     <label for="reg_emailId">Email ID</label><br>
     <input type="email" id="reg_emailId" name="reg_emailId" value="<?php 
@@ -134,12 +138,12 @@ if(empty($error_array)) {
     {
     	echo $_SESSION['reg_emailId'];
     }
-    ?>"  required><br><br>
+    ?>"  required><br>
+    <div class="error">
     <?php 
     if(in_array("Email already exists",$error_array)){echo "Email already exists<br>";}
     if(in_array("Invalid Email format",$error_array)){echo "Invalid Email format<br>";}
-
-    ?>
+    ?></div><br>
 
     <label for="reg_uname">User name</label><br>
     <input type="text" id="reg_uname" name="reg_uname" value="<?php 
@@ -150,15 +154,19 @@ if(empty($error_array)) {
     ?>" required><br><br>
 
     <label for="reg_password1">Password</label><br>
-    <input type="password" id="reg_password1" name="reg_password1" required><br><br>
+    <input type="password" id="reg_password1" name="reg_password1" required><br>
+    <div class="error">
     <?php 
     if(in_array("Passwords don't match",$error_array)){echo "Passwords don't match<br>";}
-    ?>
+    ?></div><br>
 
     <label for="reg_password2">Confirm Password</label><br>
-    <input type="password" id="reg_password2" name="reg_password2" required><br><br>
+    <input type="password" id="reg_password2" name="reg_password2" required><br><br><br>
 
     <input type="submit" id="reg_btn" name="reg_btn" value="Sign up"><br><br>
+
+    <div class="end">Already a member? <a href="login.php">Login</a></div>
 </form>
+</div>
 </body>
 </html>

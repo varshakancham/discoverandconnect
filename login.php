@@ -44,21 +44,30 @@ if(isset($_POST["log_btn"]))
 <html>
 <head>
 	<title>Login</title>
+	<link rel="stylesheet" href="register_style.css">
 </head>
 <body>
+<div class="form_bg">
+<h2>Login</h2>
 <form action="login.php" method="post">
 	<label for="log_emailId">Email ID</label><br>
-    <input type="email" id="log_emailId" name="log_emailId" required><br><br>
+    <input type="email" id="log_emailId" name="log_emailId" required><br>
+    <div class="error">
     <?php 
     if(in_array("Email not found",$error_array)){echo "Email not found<br>";}
-    ?>
+    ?></div><br>
 
     <label for="log_password">Password</label><br>
-    <input type="password" id="log_password" name="log_password" required><br><br>
+    <input type="password" id="log_password" name="log_password" required><br>
+    <div class="error">
     <?php 
     if(in_array("Incorrect password",$error_array)){echo "Incorrect password<br>";}
-    ?>
+    ?></div><br>
 
-    <input type="submit" id="log_btn" name="log_btn" value="Login">
+    <input type="submit" id="log_btn" name="log_btn" value="Login"><br><br>
+
+    <div class="end">Not a member? <a href="register.php">Register</a></div>
+   </form>
+   </div>
 </body>
 </html>
