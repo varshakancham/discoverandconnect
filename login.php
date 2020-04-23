@@ -66,7 +66,8 @@ if(isset($_POST["log_btn"]))
 
     <input type="submit" id="log_btn" name="log_btn" value="Login"><br><br>
 
-    <div class="end">Not a member? <a href="register.php">Register</a></div>
+    <div class="end"><a href="forgotpw.php">Forgot Password?</a><br><br>
+    	Not a member? <a href="register.php">Register</a></div>
    </form>
    </div>
 </body>

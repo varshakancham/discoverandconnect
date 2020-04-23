@@ -85,7 +85,7 @@ if(empty($error_array)) {
 			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";*/
 
 
-		$query = mysqli_query($conn, "INSERT INTO users VALUES ('', '$reg_fname', '$reg_lname', '$reg_uname', '$reg_emailId', '$reg_password1', '$reg_date', '', '0', '0', 'no', ',')");
+		$query = mysqli_query($conn, "INSERT INTO users VALUES ('', '$reg_fname', '$reg_lname', '$reg_uname', '$reg_emailId', '$reg_password1', '$reg_date', '', '0', '0', 'no', ',' , '0')");
 
 		$_SESSION['reg_fname'] = "";
 		$_SESSION['reg_lname'] = "";
@@ -158,6 +158,7 @@ if(empty($error_array)) {
     <div class="error">
     <?php 
     if(in_array("Passwords don't match",$error_array)){echo "Passwords don't match<br>";}
+    if(in_array("Your password can only contain english characters or numbers",$error_array)){echo "Your password can only contain english characters or numbers<br>";}
     ?></div><br>
 
     <label for="reg_password2">Confirm Password</label><br>
