@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" );
+
+* {
+
+	box-sizing: border-box;
+  
+	padding: 0;
+  
+	margin: 0;
+  
+  }
+  
+  body {
+  
+	font-family: sans-serif;
+  
+  }
+  
+  nav {
+	
+	background: #071e3d;
+	padding: 5px 20px;
+  
+  }
+
+  
+  
+  ul {
+  
+	list-style-type: none;
+	padding: 0;
+  
+  }
+  
+  a {
+  
+	color: white;
+  
+	text-decoration: none;
+  
+  }
+  
+  a:hover {
+  
+	text-decoration: underline;
+  
+  }
+  
+  .logo a:hover {
+  
+	text-decoration: none;
+  
+  }
+
+  .item a {
+	position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+	border-radius: 50%;
+	background-color:#278ea5;
+    text-align: center;
+    transition: 0.5s;
+    transform: translate(0,0px);
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .item .fa {
+	color: white;
+    font-size: 20px;
+    line-height: 40px;
+    transition: .1s;
+  }
+
+  .menu li {
+	font-size: 16px;
+	height:55px;	
+	padding-left:  10px;
+	padding-right: 10px;
+	white-space: nowrap;
+	
+  
+  }
+
+  
+  .logo a,
+  
+  .toggle a {
+  
+	font-size: 25px;
+	position: relative;
+	top:25%;
+  
+  }
+
+  
+  
+
+
+  
+  
+  
+  
+  /* Mobile menu */
+  
+  .menu {
+  
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+  
+  }
+  
+  .toggle {
+  
+	order: 1;
+  
+  }
+  
+  .item.button {
+  
+  order: 2;
+  min-width: 350px;
+  max-width: 678px;
+  
+  }
+  
+  .item {
+  
+	width: 100%;
+  
+  
+	order: 3;
+  
+	display: none;
+  
+  }
+  p.navmsg {
+    padding-left: 20px;
+    padding-top: 10px;
+    width:50%;
+    display: block;
+    color: white;
+    font-size: 20px;
+  }
+  .item.button.active{
+    display: block;
+  }
+  
+  
+  
+  .item.active {
+    
+    display:flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    
+  
+  }
+
+  
+  
+  
+  
+  /* Navbar Toggle */
+  
+  .toggle {
+  
+  cursor:pointer;
+
+  
+  }
+  
+  .bars {
+  
+	background: #21e6c1;
+  
+	display: inline-block;
+  
+	height: 2px;
+  
+	position: relative;
+	
+  
+	transition: background .2s ease-out;
+  
+	width: 18px;
+  
+  }
+
+  
+  
+  .bars:before,
+  
+  .bars:after {
+  
+	background: #21e6c1;
+  
+	content: '';
+  
+	display: block;
+  
+	height: 100%;
+
+	
+  
+	position: absolute;
+  
+	transition: all .2s ease-out;
+  
+	width: 100%;
+  
+  }
+  
+  .bars:before {
+  
+	top: 5px;
+  
+  }
+  
+  .bars:after {
+  
+	top: -5px;
+  
+  }
+  
+  
+  
+  /* Tablet menu */
+  
+  @media all and (min-width: 672px) {
+  
+	.menu {
+  
+		justify-content: center;
+  
+	}
+  
+  
+  
+	.logo {
+  
+		flex: 1;
+  
+	}
+  
+  
+  
+	.item.button {
+  
+		width: auto;
+  
+		order: 1;
+  
+		display: block;
+  
+	}
+  
+	.toggle {
+  
+		order: 2;
+  
+  }
+  p.navmsg {
+    display: block;
+    color: white;
+  }
+}
+  
+  
+  
+  
+  /* Desktop menu */
+  
+  @media all and (min-width: 987px) {
+
+    
+  p.navmsg{
+    display: none;
+  }
+    
+  
+	.item {
+  
+		display: block;
+  
+		width: auto;
+  
+	}
+  
+	.toggle {
+  
+		display: none;
+  
+	}
+  
+	.logo {
+  
+		order: 0;
+  
+	}
+  
+	.item {
+  
+		order: 1;
+  
+	}
+  
+	.button {
+  
+		order: 2;
+  
+	}
+  
+	.menu li {
+	height: 55px;
+		
+	padding-left:  10px;
+	padding-right: 10px;
+	
+  
+	}
+  
+	.menu li.button {
+  
+		padding-right: 0;
+  
+  }
+  
+  
+  }
+
+
+
+
+
+
+  /* search bar code*/
+  .search-form {
+  
+    position: relative;
+    top: 60%;
+    left: 50%;
+    width: 350px;
+    
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: all 0.3s ease;
+  
+    &.focus {
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .search-input {
+    position: absolute;
+    top: 10px;
+    left: 38px;
+    font-size: 14px;
+    background: none;
+    color: #5a6674;
+    width: 300px;
+    height: 20px;
+    border: none;
+    appearance: none;
+    outline: none;
+  
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+  
+  .search-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none!important;
+    cursor: pointer;
+    
+    & svg {
+      width: 20px;
+      height: 20px;
+      fill: #5a6674;
+    }
+  }
+  .search-button:hover{
+      & svg{
+          fill: #e91721;
+      }
+  }
+  
