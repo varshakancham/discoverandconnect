@@ -82,7 +82,7 @@ try {
 ?>
 <html>
 <head>
-    <link rel="stylesheet" href="register_style.css">
+    <link rel="stylesheet" href="css/register_style.css">
     <title>Forgot password</title>
 </head>
 <body>

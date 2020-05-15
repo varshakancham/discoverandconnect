@@ -1,14 +1,20 @@
-body
-{
+
+
+body{
+
 	background-color:#071e3d;
 	background-size: contain;
 	color: rgba(255,255,255,150);
-	font-family: Trattatello, fantasy;
+	font-family: fantasy;
 	font-size:200%;
 	line-height: 80%
+
 }
 
+
+
 .form_bg{	
+
 	width:35%;
 	margin-top: 10%;
 	margin-left: auto;
@@ -22,13 +28,17 @@ form{
 }
 
 label{
+
 	/*font-size: 200%;*/
+
 }
 
 h2{
+
 	text-align: center;
-	/*font-size: 300%;*/
 } 
+
+
 
 input[type=text], input[type=email], input[type=password]{
   width:90%;
@@ -36,9 +46,11 @@ input[type=text], input[type=email], input[type=password]{
   color: rgba(255,255,255,150);
   border: none;
   border-bottom: 1px solid #278ea5;
-  font-family: Trattatello, fantasy;
+  font-family: fantasy;
   font-size: 80%;
 }
+
+
 
 input[type=submit]{
 	background-color: rgba(33, 230, 193, 150);
@@ -49,14 +61,14 @@ input[type=submit]{
 	text-align: center;
 	border: 2px groove #21e6c1;
 	border-radius: 7px;
-	font-family: Trattatello, fantasy;	
+	font-family: fantasy;
 	font-size: 100%;
 	font-weight: bold;
 }
 
 .error{
 	color: #278ea5;
-	font-size: 80%;		
+	font-size: 80%;	
 }
 
 .end{
@@ -67,4 +79,3 @@ input[type=submit]{
 .end a{
 	color:#278ea5;
 }
-

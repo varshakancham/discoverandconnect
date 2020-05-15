@@ -75,7 +75,7 @@ if(isset($_POST['rp_btn'])){
 ?>
 <html>
 <head>
-	<link rel="stylesheet" href="register_style.css">
+	<link rel="stylesheet" href="css/register_style.css">
 	<title>Reset Password</title>
 </head>
 <body>

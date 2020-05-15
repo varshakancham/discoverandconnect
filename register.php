@@ -101,7 +101,7 @@ if(empty($error_array)) {
 <html>
 <head>
 	<title>Registration</title>
-	<link rel="stylesheet" href="register_style.css">
+	<link rel="stylesheet" href="css/register_style.css">
 </head>
 <body>
 <div class="form_bg">

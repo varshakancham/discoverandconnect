@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<?php
+//Including header.php (Navigation bar) 
+include("header.php");
+session_destroy();
+
+?>
 Hello
 </body>
 </html>

@@ -1,11 +1,14 @@
 <?php
 require "config.php";
 require "errors.php";
+
+//Initialising variables
 $log_emailId="";
 $log_password="";
 
 if(isset($_POST["log_btn"]))
 {
+	//Validating email id
 	$log_emailId=filter_var($_POST['log_emailId'], FILTER_SANITIZE_EMAIL);
 	$_SESSION['log_emailId']=$log_emailId;
 	$log_password=strip_tags($_POST['log_password']);
@@ -15,8 +18,10 @@ if(isset($_POST["log_btn"]))
 	if($num_rows==1)
 	{
 		$row=mysqli_fetch_array($query);
-		$username=$row['username'];
+		$_SESSION['username']=$row['username'];
+
 		$user_closed=$row['user_closed'];
+		//Updating if a user account is closed
 		if($user_closed=="yes")
 		{
 			$query_user_closed=mysqli_query($conn, "UPDATE users SET user_closed='no' WHERE email='$log_emailId'");
@@ -44,7 +49,7 @@ if(isset($_POST["log_btn"]))
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" href="register_style.css">
+	<link rel="stylesheet" href="css/register_style.css">
 </head>
 <body>
 <div class="form_bg">
