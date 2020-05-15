@@ -17,6 +17,13 @@ if(isset($_POST["log_btn"]))
 		$row=mysqli_fetch_array($query);
 		$username=$row['username'];
 		$user_closed=$row['user_closed'];
+		
+		$_SESSION['userfirstname'] = $row['first_name'];
+		$_SESSION['usersecondname'] =$row['second_name'];
+		$_SESSION['userpic'] = $row['profile_pic'];
+		$_SESSION['userlike'] = $row['num_likes'];
+		$_SESSION['userpost'] = $row['num_posts'];
+		
 		if($user_closed=="yes")
 		{
 			$query_user_closed=mysqli_query($conn, "UPDATE users SET user_closed='no' WHERE email='$log_emailId'");
