@@ -17,7 +17,7 @@ if (isset($_POST['reg_btn']))
  $reg_fname=strip_tags($_POST['reg_fname']);
  $reg_fname=str_replace(" ", "", $reg_fname);
  $reg_fname=ucfirst(strtolower($reg_fname));
- $_SESSION['reg_fname']=$reg_fname;
+ $_SESSION['fname']=$reg_fname;
  if(strlen($reg_fname)<1 || strlen($reg_fname)>25)
  {
  	array_push($error_array,"First name should be 1 to 25 characters long");
@@ -26,17 +26,17 @@ if (isset($_POST['reg_btn']))
  $reg_lname=strip_tags($_POST['reg_lname']);
  $reg_lname=str_replace(" ", "", $reg_lname);
  $reg_lname=ucfirst(strtolower($reg_lname));
- $_SESSION['reg_lname']=$reg_lname;
+ $_SESSION['lname']=$reg_lname;
  if(strlen($reg_lname)<1 || strlen($reg_lname)>25)
  {
  	array_push($error_array,"Last name should be 1 to 25 characters long");
  }
 
  $reg_emailId=strip_tags($_POST['reg_emailId']);
- $_SESSION['reg_emailId']=$reg_emailId;
+ $_SESSION['emailId']=$reg_emailId;
 
  $reg_uname=strip_tags($_POST['reg_uname']);
- $_SESSION['reg_uname']=$reg_uname;
+ $_SESSION['uname']=$reg_uname;
 
  $reg_password1=strip_tags($_POST['reg_password1']);
 
@@ -63,6 +63,12 @@ else
 	array_push($error_array,"Invalid Email format");
 }
 
+$u_check=mysqli_query($conn,"SELECT * FROM users WHERE username='$reg_uname'");
+$num_rows=mysqli_num_rows($u_check);
+if($num_rows>0){
+	array_push($error_array,"Username already exists");
+}
+
 if ($reg_password1!=$reg_password2)
 {
 	array_push($error_array,"Passwords don't match");
@@ -75,8 +81,8 @@ else
 }
 if(empty($error_array)) {
 		$reg_password1 = md5($reg_password1);
-		$username = strtolower($reg_fname . "_" . $reg_lname);		
-		/*Profile picture assignment
+		/*$username = strtolower($reg_fname . "_" . $reg_lname);		
+		Profile picture assignment
 		$rand = rand(1, 2); //Random number between 1 and 2
 
 		if($rand == 1)
@@ -85,14 +91,10 @@ if(empty($error_array)) {
 			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";*/
 
 
-		$query = mysqli_query($conn, "INSERT INTO users VALUES ('', '$reg_fname', '$reg_lname', '$reg_uname', '$reg_emailId', '$reg_password1', '$reg_date', '', '0', '0', 'no', ',' , '0')");
+		$query = mysqli_query($conn, "INSERT INTO users VALUES ('','$reg_fname', '$reg_lname', '$reg_uname', '$reg_emailId', '$reg_password1', '$reg_date', '', '0', '0', 'no', ',', ',')");
 
-		$_SESSION['reg_fname'] = "";
-		$_SESSION['reg_lname'] = "";
-		$_SESSION['reg_emailId'] = "";
-		$_SESSION['reg_uname']="";
 
-		header("Location: login.php");
+		header("Location: hobbies.php");
 		exit();
 	}
 
@@ -151,7 +153,12 @@ if(empty($error_array)) {
     {
     	echo $_SESSION['reg_uname'];
     }
-    ?>" required><br><br>
+    ?>" required><br>
+    <div class="error">
+    <?php 
+    if(in_array("Username already exists",$error_array)){echo "Username already exists<br>";}
+    ?></div>
+    <br>
 
     <label for="reg_password1">Password</label><br>
     <input type="password" id="reg_password1" name="reg_password1" required><br>

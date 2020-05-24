@@ -79,3 +79,7 @@ input[type=submit]{
 .end a{
 	color:#278ea5;
 }
+
+#h_intro{
+	padding-left: 10%;
+}
