@@ -19,13 +19,25 @@ if(isset($_POST["log_btn"]))
 	{
 		$row=mysqli_fetch_array($query);
 		$_SESSION['username']=$row['username'];
-
 		$user_closed=$row['user_closed'];
 		//Updating if a user account is closed
 		if($user_closed=="yes")
 		{
 			$query_user_closed=mysqli_query($conn, "UPDATE users SET user_closed='no' WHERE email='$log_emailId'");
 		}
+
+		$_SESSION['first_name']=$row['first_name'];
+		$_SESSION['last_name']=$row['last_name'];
+		$_SESSION['profile_pic']=$row['profile_pic'];
+		$_SESSION['num_posts']=$row['num_posts'];
+		$_SESSION['num_likes']=$row['num_likes'];
+		$_SESSION['friend_array']=$row['friend_array'];
+		$_SESSION['hobbies']=$row['hobbies'];
+		$_SESSION['userid']=$row['id'];
+
+
+
+
 		header("Location: index.php");
 		exit();
 	}
